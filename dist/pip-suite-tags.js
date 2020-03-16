@@ -66,12 +66,13 @@ angular.module('pipTags', [
 },{"./data":3,"./rest/TagResources":5,"./tag_list/TagList":6}],5:[function(require,module,exports){
 configTagResources.$inject = ['pipRestProvider'];
 function configTagResources(pipRestProvider) {
+    "ngIjnect";
     pipRestProvider.registerResource('tags', '/api/1.0/tags/:party_id', { party_id: '@party_id' }, {
         update: { method: 'PUT' }
     });
 }
 angular
-    .module('pipTag.Rest', [])
+    .module('pipTag.Rest', ['pipRest'])
     .config(configTagResources);
 },{}],6:[function(require,module,exports){
 {
